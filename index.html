@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      #map-canvas { 
+      	height: 500px;
+      	width: 500px;
+      }
+    </style>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!--Google Maps API intgration -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsB6Kf2ju4VN2wIwJ-bQPmsV29UKdJpYw">
+    </script>
+    <script type="text/javascript">
+      function initialize(lat, lon) {
+      	var myLatlng = new google.maps.LatLng(lat, lon);
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 18
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+
+		 var marker = new google.maps.Marker({
+		    position: myLatlng,
+		    icon: {
+		      path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+		      strokeColor: "#49166D",
+		      scale: 5
+		    },
+		    draggable: false,
+		    map: map
+		  });
+      }
+    </script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	<h2>SDF Test</h2>
+	<h3>sendSMS &amp; getLocation</h3>
+		<p>Enter a number and message to use sendSMS, and only a number to use getLocation</p>
+		<p>list of accepted numbers</p>
+		<ul>
+			<li>14388311786</li>
+			<li>14388803786</li>
+			<li>14166848738</li>
+			<li>14388288769</li>
+		</ul>
+	</div>
+	
+	<div class="row">
+		<form>
+		message: <input type="text" name="message" id="textmessage">
+		number: <input type="text" name="number" id="number">
+		</form>
+
+		<button id="myBtn">Try sendSMS</button>
+		<button id="btn2">Try getLocation</button>
+	</div>
+	
+
+	<div class="row">
+		<div id="response"></div>
+		<div id="map-canvas"/>
+	</div>
+
+	
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script src="js/SDF.js"></script>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+$("#btn2").click(getLoc);
+
+function getLoc(){
+	var num  = $("#number").val();
+	getLocation(num);
+};
+
+
+
+function myFunction() {
+	var msg = $("#textmessage").val();
+	var num  = $("#number").val();
+    sendSMS(msg, num);
+};
+
+</script>
+
+</body>
+</html>
