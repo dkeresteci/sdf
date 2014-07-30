@@ -23,26 +23,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsB6Kf2ju4VN2wIwJ-bQPmsV29UKdJpYw">
     </script>
     <script type="text/javascript">
-      function initialize(lat, lon) {
-      	var myLatlng = new google.maps.LatLng(lat, lon);
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 18
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
 
-		 var marker = new google.maps.Marker({
-		    position: myLatlng,
-		    icon: {
-		      path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-		      strokeColor: "#49166D",
-		      scale: 5
-		    },
-		    draggable: false,
-		    map: map
-		  });
-      }
     </script>
 </head>
 <body>
@@ -57,6 +38,8 @@
 			<li>14388803786</li>
 			<li>14166848738</li>
 			<li>14388288769</li>
+			<li>14165547890 (Jerome Birot)</li>
+			<li>14162065436 (Agnes Chow)</li>
 		</ul>
 	</div>
 	
@@ -81,6 +64,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/googlemapsAPI.js"></script>
 
 <script src="js/SDF.js"></script>
 
