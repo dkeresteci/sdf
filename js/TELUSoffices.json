@@ -1,0 +1,194 @@
+
+
+ {
+ 	"offices":
+ 	[
+
+		{
+			"name": "Lendrum Wire Centre",
+			"address": "11404 60 Ave, Edmonton",
+			"lat" : 53.4969162,
+			"lng" : -113.5269771
+		},
+
+		{
+			"name": "Memorial Drive",
+			"address": "2912 Memorial Dr SE, Calgary",
+			"lat" : 51.0499949,
+			"lng" : -113.9913054
+		},
+				{
+			"name": "Calgary IDC",
+			"address": "1525 10th Avenue SW, Calgary",
+			"lat" : 51.0442602,
+			"lng" : -114.0966226
+		},
+
+		{
+			"name": "Edmonton Toll",
+			"address": "10035 – 102 Avenue, Edmonton",
+			"lat" : 53.5432646,
+			"lng" : -113.4919057
+		},
+			{
+			"name": "7th Avenue Toll",
+			"address": "120 7th Ave SW, Calgary",
+			"lat" : 51.0467583,
+			"lng" : -114.0640499
+		},
+
+		{
+			"name": "Len Werry Building",
+			"address": "622 1st Street SW, Calgary",
+			"lat" : 551.0468312,
+			"lng" : -114.065041
+		},
+		{
+			"name": "TELUS House Calgary",
+			"address": "411 1st Street SE, Calgary",
+			"lat" : 51.0489633,
+			"lng" : -114.0606148
+		},
+
+		{
+			"name": "TELUS House Calgary East",
+			"address": "3030 2nd Ave SE, Calgary",
+			"lat" : 51.0508626,
+			"lng" : -113.988909
+		},
+		{
+			"name": "TELUS House Edmonton",
+			"address": "10020-100 Street NW, Edmonton",
+			"lat" : 53.5400926,
+			"lng" : -113.491245
+		},
+
+		{
+			"name": "Memorial Drive",
+			"address": "2912 Memorial Dr SE, Calgary",
+			"lat" : 51.0499949,
+			"lng" : -113.9913054
+		},
+		{
+			"name": "Amherst C.O.",
+			"address": "2008 W. 41st Avenue, Vancouver",
+			"lat" : 49.2345086,
+			"lng" : -123.1524379
+		},
+
+		{
+			"name": "Brian Canfield Centre (BCC)",
+			"address": "3777 Kingsway, Burnaby",
+			"lat" : 49.2325035,
+			"lng" : -123.0240931
+		},
+		{
+			"name": "Gilmore Way",
+			"address": "3500 Gilmore Way, Burnaby, BC",
+			"lat" : 49.2528775,
+			"lng" : -123.0101976
+		},
+		{
+			"name": "Kamloops IDC",
+			"address": "1458 Bunker Rd, Kamloops",
+			"lat" : 50.6743385,
+			"lng" : -120.3817444
+		},
+		{
+			"name": "TELUS House Burnaby",
+			"address": "4519/4535 Canada Way, Burnaby",
+			"lat" : 49.2551278,
+			"lng" : -123.0021391
+		},
+		{
+			"name": "TELUS House Vancouver",
+			"address": "555 Robson, Vancouver",
+			"lat" : 49.2807508,
+			"lng" : -123.1188523
+		},
+		{
+			"name": "William Farrell Building",
+			"address": "768 Seymour, Vancouver",
+			"lat" : 49.2809376,
+			"lng" : -123.1184959
+		},
+		{
+			"name": "THFS Explorer",
+			"address": "5090 Explorer Dr, Suite 1000, Mississauga, ON",
+			"lat" : 43.6611237,
+			"lng" : -79.5964737
+		},
+		{
+			"name": "TELUS House Consilium Place",
+			"address": "200/300 Consilium Place, Scarborough",
+			"lat" : 43.7779266,
+			"lng" : -79.252646
+		},
+		{
+			"name": "TELUS House Ottawa",
+			"address": "215 Slater Street, Ottawa",
+			"lat" : 45.4194268,
+			"lng" : -75.6996585
+		},
+		{
+			"name": "TELUS House Toronto",
+			"address": "25 York Street, Toronto",
+			"lat" : 43.6434772,
+			"lng" : -79.381114
+		},
+		{
+			"name": "111 Duke",
+			"address": "111 rue Duke bureau 4200, Montreal, QC",
+			"lat" : 45.4965722,
+			"lng" : -73.5564098
+		},
+		{
+			"name": "St. Marie",
+			"address": "403 Blvd Vachone Sud",
+			"lat" : 45.4196629,
+			"lng" : -73.6135411
+		},
+		{
+			"name": "217, Avenue L&#233;onidas",
+			"address": "217 Avenue L&#233;onidas Sud, Rimouski",
+			"lat" : 48.459889,
+			"lng" : -68.50879
+		},
+		{
+			"name": "Place TELUS Rimouski",
+			"address": "6 rue Jules-A -Brillant, Rimouski",
+			"lat" :48.449795,
+			"lng" : -68.524502
+		},
+		{
+			"name": "THFS Longueuil",
+			"address": "1000, rue de Sérigny, Bur 600",
+			"lat" : 45.5234079,
+			"lng" : -73.5232106
+		},
+		{
+			"name": "Quebec IDC",
+			"address": "226 Saint-Germain Rue, Rimouski, QC",
+			"lat" : 48.4554606,
+			"lng" : -68.5182654
+		},
+		{
+			"name": "Place TELUS Quebec City",
+			"address": "300 rue Saint Paul, Quebec City",
+			"lat" : 46.8167968,
+			"lng" : -71.212074
+		},
+		{
+			"name": "Place TELUS St-Laurent",
+			"address": "8885 Route Transcanadienne",
+			"lat" : 45.4927543,
+			"lng" : -73.7384385
+		},
+		{
+			"name": "TELUS, 1155 Rue Metcalfe",
+			"address": "1155 Rue Metcalfe, Montreal",
+			"lat" : 45.5000013,
+			"lng" : -73.5704243
+		}
+	] 
+}

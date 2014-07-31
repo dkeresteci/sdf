@@ -1,11 +1,21 @@
 function sendSMS(message, number){	
   $("#floatingCirclesG").show();
+  $("#response").html("Sending...");
 	var xmlhttp=new XMLHttpRequest();
 
 	  xmlhttp.onreadystatechange=function() {
       $("#floatingCirclesG").hide();
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-      $("#response").texxt("Success!");
+
+      try{
+        var response = JSON.parse(xmlhttp.responseText);
+        
+      }catch(err){
+        $("#response").html("Send Message Unsuccessful<br>" + xmlhttp.responseText);
+      }
+
+      $("#response").html("Message Sent Successfully!<br>");
+      
     }
   }
 	xmlhttp.open("POST","sendSMS.php",true);
@@ -14,29 +24,48 @@ function sendSMS(message, number){
 };
 
 function getLocation(number){	
+  //Displays location, address for work location, or says WFH, or handels a response error. 
   
+  $("#map-canvas").hide();
+  $("#response").empty();
   $("#floatingCirclesG").show();
-
 	var xmlhttp=new XMLHttpRequest();
 
 	  xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
       $("#floatingCirclesG").hide();
     	
-      try{
-        var response = JSON.parse(xmlhttp.responseText);
-        var lat  = response.result.latitude;
-        var lon = response.result.longitude;
-        var jsonString = JSON.stringify(response);
-        init_gmaps(lat, lon, 18, 5, "#49166D");
+        try{
+          //See if the response is in json format and has a timestamp
+          //If it doesn't - something went wrong
+          var response = JSON.parse(xmlhttp.responseText);
+          var timestamp = response.timestamp;         
+        }catch(err){
+          $("#response").html("Could not retrieve location data <br>" + xmlhttp.responseText);
+          return null; 
+        }
+
+        //If the reponse has an office name with it, display the location, if not say they are WFH
+        if (response.name){
+          $("#response").html("Working from: " + response.name + " at " + response.address);
+          $("#map-canvas").show();
+          init_gmaps(response.lat, response.lng, 14, 5, "#49166D");
+        }else{
+          $("#response").html("Working from Home");
+        }
+        
+        //$("#response").html("lat: " + lat + " lng: " + lng + " timestamp: " + timestamp);
+        //var jsonString = JSON.stringify(response);
+       // init_gmaps(lat, lon, 18, 5, "#49166D");
        // document.getElementById("response").innerHTML= jsonString;
-      }catch(error){
-        $("#response").text(xmlhttp.responseText);
-      }
     	
-    }
+    };
+    if (xmlhttp.readyState==4 && xmlhttp.status!=200) {
+      $("#response").html("Unsuccessful Request");
+    };
   }
 	xmlhttp.open("POST","getLocation.php",true);
         xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xmlhttp.send("num=" + number);
 };
+

@@ -2,10 +2,10 @@
 
 //Load PEM Certificate from directory not accessible from the web (For security)
 //ON XAMPP (localhost)
-// $cert = "cert.pem";
+ $cert = "cert.pem";
 
 //ON AWS (Ubuntu)
- $cert = "/var/ssl/cert.pem";
+//$cert = "/var/ssl/cert.pem";
 
 //Load your message from the URL phpFile.php?msg=<MESSAGE>
 if (!empty($_REQUEST['msg'])) {
@@ -41,9 +41,6 @@ $params = array('addresses' => $address, 'message' => $message);
 //Store the XML response in a variable
 $response = $client->sendSms($params);
 
-//Dump the variable to see the response
-$return = $response->result;
-
-
-print_r($return);
+$json_resp = json_encode($response);
+print($json_resp);
 ?>
