@@ -13,61 +13,112 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 	<link rel="stylesheet" href="css/cssload.css">
 </head>
 <body>
 <div class="container">
 	<div class="row">
-	<h2>SDF Test</h2>
-	<h3>sendSMS &amp; getLocation</h3>
-		<p>Enter a number and message to use sendSMS, and only a number to use getLocation</p>
-		<p>list of accepted numbers</p>
-		<ul>
-			<li>14388311786</li>
-			<li>14388803786</li>
-			<li>14166848738</li>
-			<li>14388288769</li>
-			<li>14165547890 (Jerome Birot)</li>
-			<li>14162065436 (Agnes Chow)</li>
-		</ul>
+		<h2>Find a TELUS team member</h2>
+		<h4>A demonstration of TELUS' Service Delivery Framework (SDF)</h4>
+		
 	</div>
-	
+	<div class="row"> 
+		<h4>Select a team member to find which TELUS office they are working out of</h4>
+		<div class="col-lg-4">
+			<div class="btn-group-vertical">
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14165547890"><h3>Jerome Birot</h3></button>
+				</div>
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14162065436"><h3>Agnes Chow</h3></button>
+				</div>
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14166848738"><h3>Andrew Johnston</h3></button>
+				</div>
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14388803786"><h3>Daniel Keresteci (work)</h3></button>
+				</div>
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14388311786"><h3>Daniel Keresteci (personal)</h3></button>
+				</div>
+				<div class="btn-group">
+			    	<button type="button" class="find-location btn btn-default" data-number="14388288769"><h3>Troy Bryant</h3></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<div id="floatingCirclesG">
+					<div class="f_circleG" id="frotateG_01">
+					</div>
+					<div class="f_circleG" id="frotateG_02">
+					</div>
+					<div class="f_circleG" id="frotateG_03">
+					</div>
+					<div class="f_circleG" id="frotateG_04">
+					</div>
+					<div class="f_circleG" id="frotateG_05">
+					</div>
+					<div class="f_circleG" id="frotateG_06">
+					</div>
+					<div class="f_circleG" id="frotateG_07">
+					</div>
+					<div class="f_circleG" id="frotateG_08">
+					</div>
+			</div> 
+			<h3 id="response"></h3>
+			<div id="map-canvas" style="display: none;"></div>
+
+			
+		</div>
+		
+	</div>
+
+
 	<div class="row">
-		<form>
-		message: <input type="text" name="message" id="textmessage">
+<!-- 		<form>
+		message: <input type="text" name="message" id="textmessageA">
 		number: <input type="text" name="number" id="number">
 		</form>
 
 		<button id="myBtn">Try sendSMS</button>
-		<button id="btn2">Try getLocation</button>
+		<button id="btn2">Try getLocation</button> -->
+
+		<h2>Send an SMS</h2>
+		<h4>use SDF to send a SMS, sender appears as short code 8989</h4>
+		<form class="form-horizontal">
+		  <div class="form-group">
+		    <label for="selectTo" class="col-sm-2 control-label">Recipient</label>
+		    <div class="col-sm-4">
+		      <select class="form-control" id="SMSnumber">
+		       	  <option value="" disabled selected>Select a recipient</option>
+				  <option value="14165547890">Jerome Birot</option>
+				  <option value="14162065436">Agnes Chow</option>
+				  <option value="14166848738">Andrew Johnston</option>
+				  <option value="14388803786">Daniel Keresteci (work)</option>
+				  <option value="14388311786">Daniel Keresteci (personal)</option>
+				  <option value="14388288769">Troy Bryant</option>
+				</select>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="msg" class="col-sm-2 control-label">Message</label>
+
+		    <div class="col-sm-6">
+		      <textarea type="text" class="form-control" id="textmessage" rows="3" placeholder="Add text here..."></textarea>
+		      <p class="help-block">144 characters maximum</p>
+		    </div>
+		  </div> 
+		</form>
+
+		<div class="col-sm-2 col-sm-offset-2">
+		  	<button id="sendSMS" class="btn btn-primary">Send!</button>
+		</div>
+		<div id="responseSMS"></div>
+
 	</div>
-	
-
-	<div class="row">
-		<div id="response"></div>
-		<div id="map-canvas"></div>
-
-		<div id="floatingCirclesG">
-			<div class="f_circleG" id="frotateG_01">
-			</div>
-			<div class="f_circleG" id="frotateG_02">
-			</div>
-			<div class="f_circleG" id="frotateG_03">
-			</div>
-			<div class="f_circleG" id="frotateG_04">
-			</div>
-			<div class="f_circleG" id="frotateG_05">
-			</div>
-			<div class="f_circleG" id="frotateG_06">
-			</div>
-			<div class="f_circleG" id="frotateG_07">
-			</div>
-			<div class="f_circleG" id="frotateG_08">
-			</div>
-		</div> 
-	</div>
-
+	<div class="flooter"><p class="pull-right">created by Daniel Keresteci</p></div>
 	
 </div>
 
@@ -82,20 +133,32 @@
 <script src="js/SDF.js"></script>
 
 <script>
-document.getElementById("myBtn").addEventListener("click", myFunction);
+// document.getElementById("myBtn").addEventListener("click", myFunction);
 
-$("#btn2").click(getLoc);
-
-function getLoc(){
-	var num  = $("#number").val();
+//$("#btn2").click(getLoc);
+$(".find-location").click(function(){
+	var num = $(this).data('number');
 	getLocation($.trim(num));
+});
+
+$("#sendSMS").click(function(){
+	var num  = $("#SMSnumber").val();
+	var msg = $("#textmessage").val();
+	sendSMS(msg, num);
+});
+
+function getLoc(num){
+	//var num  = $("#number").val();
+	//getLocation($.trim(num));
+
+	alert(num);
 };
 
 
 
 function myFunction() {
 	var msg = $("#textmessage").val();
-	var num  = $("#number").val();
+	var num  = $("#SMSnumber").val();
     sendSMS(msg, $.trim(num));
 };
 

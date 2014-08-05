@@ -1,7 +1,7 @@
 <?php
 
 //Load PEM Certificate from directory not accessible from the web (For security)
-//ON XAMPP (localhost)
+//ON XAMPP (localhos
  //$cert = "cert.pem";
 
 //ON AWS (Ubuntu)

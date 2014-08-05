@@ -1,24 +1,21 @@
 function sendSMS(message, number){	
-  $("#floatingCirclesG").show();
-  $("#response").html("Sending...");
+  $("#responseSMS").html("Sending...");
 	var xmlhttp=new XMLHttpRequest();
 
 	  xmlhttp.onreadystatechange=function() {
-      $("#floatingCirclesG").hide();
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 
       try{
         var response = JSON.parse(xmlhttp.responseText);
+        $("#responseSMS").html("Message Sent Successfully!<br>");
         
       }catch(err){
-        $("#response").html("Send Message Unsuccessful<br>" + xmlhttp.responseText);
+        $("#responseSMS").html("Send Message Unsuccessful<br>");
       }
 
-      $("#response").html("Message Sent Successfully!<br>");
-      
     }
   }
-	xmlhttp.open("POST","sendSMS.php",true);
+	xmlhttp.open("POST","sendSMS.php", true);
         xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xmlhttp.send("msg=" + message + "&num=" + number);
 };
@@ -41,7 +38,8 @@ function getLocation(number){
           var response = JSON.parse(xmlhttp.responseText);
           var timestamp = response.timestamp;         
         }catch(err){
-          $("#response").html("Could not retrieve location data <br>" + xmlhttp.responseText);
+          //$("#response").html("Could not retrieve location data <br>" + xmlhttp.responseText);
+          $("#response").html("Could not retrieve location data <br>");
           return null; 
         }
 
