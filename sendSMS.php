@@ -2,10 +2,10 @@
 
 //Load PEM Certificate from directory not accessible from the web (For security)
 //ON XAMPP (localhost)
- $cert = "cert.pem";
+ //$cert = "cert.pem";
 
 //ON AWS (Ubuntu)
-//$cert = "/var/ssl/cert.pem";
+$cert = "/var/ssl/cert.pem";
 
 //Load your message from the URL phpFile.php?msg=<MESSAGE>
 if (!empty($_REQUEST['msg'])) {
