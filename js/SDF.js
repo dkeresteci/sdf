@@ -59,7 +59,8 @@ function getLocation(number){
     	
     };
     if (xmlhttp.readyState==4 && xmlhttp.status!=200) {
-      $("#response").html("Unsuccessful Request");
+      $("#floatingCirclesG").hide();
+      $("#response").html("Unsuccessful Request, Server Error");
     };
   }
 	xmlhttp.open("POST","getLocation.php",true);
