@@ -185,6 +185,12 @@
 			"lng" : -73.7384385
 		},
 		{
+			"name": "Place TELUS Montreal",
+			"address": "630 Ren&#233;-Levesque ouest, Montreal",
+			"lat" : 45.5023721,
+			"lng" : -73.566764
+		},
+		{
 			"name": "TELUS, 1155 Rue Metcalfe",
 			"address": "1155 Rue Metcalfe, Montreal",
 			"lat" : 45.5000013,

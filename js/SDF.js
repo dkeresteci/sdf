@@ -39,7 +39,7 @@ function getLocation(number){
           var timestamp = response.timestamp;         
         }catch(err){
           //$("#response").html("Could not retrieve location data <br>" + xmlhttp.responseText);
-          $("#response").html("Could not retrieve location data <br>");
+          $("#response").html("Could not retrieve location data <br> Users phone may be off");
           return null; 
         }
 
@@ -49,7 +49,7 @@ function getLocation(number){
           $("#map-canvas").show();
           init_gmaps(response.lat, response.lng, 14, 5, "#49166D");
         }else{
-          $("#response").html("Working from Home");
+          $("#response").html("Working Mobile");
         }
         
         //$("#response").html("lat: " + lat + " lng: " + lng + " timestamp: " + timestamp);
